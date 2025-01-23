@@ -357,7 +357,7 @@ jobs:
     - name: get-location
       run: |
             apt-cache show qt6-base-dev
-            find /usr -name "Qt6Config.cmake"
+            find / -name "Qt6Config.cmake" -print
 
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with: 
