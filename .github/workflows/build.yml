@@ -352,7 +352,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-            sudo apt install -y libfuse2 
+            sudo apt install -y libfuse2
+            
+    - name: get-location
+      run: |
+            apt-cache show qt6-base-dev
+            dpkg-query -L qt6-base-dev
+            find /usr -name "Qt6Config.cmake"
 
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with: 
