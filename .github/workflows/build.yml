@@ -34,7 +34,7 @@ jobs:
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo add-apt-repository 'deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main'
 
-    - uses: awalsh128/cache-apt-pkgs-action@latest
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.4
       with: 
         packages: clang-format-18
         version: 1.0
@@ -43,7 +43,6 @@ jobs:
       env:
         COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
       run: ./.ci/clang-format.sh
-
 
   get-info:
     runs-on: ubuntu-24.04
@@ -292,7 +291,7 @@ jobs:
       run: |
             sudo apt install -y libfuse2
 
-    - uses: awalsh128/cache-apt-pkgs-action@latest
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev clang build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
         version: 1.0
@@ -354,7 +353,7 @@ jobs:
       run: |
             sudo apt install -y libfuse2 qt6-base-dev qt6-tools-dev qt6-multimedia-dev
 
-    - uses: awalsh128/cache-apt-pkgs-action@latest
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev clang build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
         version: 1.0      
@@ -407,7 +406,7 @@ jobs:
       run: |
             sudo apt install -y libfuse2
 
-    - uses: awalsh128/cache-apt-pkgs-action@latest
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev gcc-14 build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
         version: 1.0      
@@ -449,7 +448,7 @@ jobs:
       run: |
             sudo apt install -y libfuse2 qt6-base-dev qt6-tools-dev qt6-multimedia-dev
 
-    - uses: awalsh128/cache-apt-pkgs-action@latest
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev gcc-14 build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
         version: 1.0 
