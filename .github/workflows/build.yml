@@ -33,11 +33,12 @@ jobs:
       run: |
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo add-apt-repository 'deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main'
+        echo "branch-${{ github.ref_name }}"
 
     - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: clang-format-18
-        version: 1.0
+        version: branch-${{ github.ref_name }}
 
     - name: Build
       env:
@@ -294,7 +295,7 @@ jobs:
     - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev clang build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
-        version: 1.0
+        version: branch-${{ github.ref_name }}
 
     - name: Cache CMake Configuration
       uses: actions/cache@v4 
@@ -356,7 +357,7 @@ jobs:
     - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev clang build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
-        version: 1.0      
+        version: branch-${{ github.ref_name }}      
 
     - name: Cache CMake Configuration
       uses: actions/cache@v4 
@@ -409,7 +410,7 @@ jobs:
     - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev gcc-14 build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
-        version: 1.0      
+        version: branch-${{ github.ref_name }}     
 
     - name: Cache CMake Configuration
       uses: actions/cache@v4 
@@ -451,7 +452,7 @@ jobs:
     - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: libx11-dev libxext-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libglfw3-dev libgles2-mesa-dev gcc-14 build-essential libasound2-dev libpulse-dev libopenal-dev libudev-dev
-        version: 1.0 
+        version: branch-${{ github.ref_name }}
 
     - name: Cache CMake Configuration
       uses: actions/cache@v4 
