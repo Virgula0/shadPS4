@@ -34,7 +34,7 @@ jobs:
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo add-apt-repository 'deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main'
 
-    - uses: awalsh128/cache-apt-pkgs-action@v1.4.4
+    - uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with: 
         packages: clang-format-18
         version: 1.0
